@@ -11,7 +11,8 @@ Swagger 是一套基于 OpenAPI 规范构建的开源工具，可以帮助我们
 SpringBoot启动应用类上增加@EnableSwagger2注解即可。
 注意：通常我们增加到Swagger的Config配置类上，方便我们对Swagger API文档的使用环境进行控制，例如，我们只在开发和测试环境下使用，其他环境关闭我们只需要配置类上增加@Profile({"dev","test"})即可
     1> Swagger配置类上  
-    ```
+
+    ```java
      @Configuration
         /** Swagger2配置只在dev和test环境下生效*/
         @Profile({"dev","test"})
@@ -19,9 +20,10 @@ SpringBoot启动应用类上增加@EnableSwagger2注解即可。
         public class SwaggerConfig {
         }
     ```
-    2> 主启动类上  
-     ```
-     @SpringBootApplication
+​    2> 主启动类上  
+
+```java
+@SpringBootApplication
         @EnableSwagger2
         public class SwaggerApplication {
             public static void main(String[] args) {
@@ -40,6 +42,9 @@ SpringBoot启动应用类上增加@EnableSwagger2注解即可。
                         .build();
             }
         }
-     ```
+```
+
+
+
 ## 延伸
 如果需要配置多个分组，我们只需要配置多个docket,每个docket中groupName设置不同的组名即可
