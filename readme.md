@@ -12,14 +12,14 @@ SpringBoot启动应用类上增加@EnableSwagger2注解即可。
 注意：通常我们增加到Swagger的Config配置类上，方便我们对Swagger API文档的使用环境进行控制，例如，我们只在开发和测试环境下使用，其他环境关闭我们只需要配置类上增加@Profile({"dev","test"})即可
     1> Swagger配置类上  
 
-    ```java
-     @Configuration
-        /** Swagger2配置只在dev和test环境下生效*/
-        @Profile({"dev","test"})
-        @EnableSwagger2
-        public class SwaggerConfig {
-        }
-    ```
+ ```java
+  @Configuration
+     /** Swagger2配置只在dev和test环境下生效*/
+     @Profile({"dev","test"})
+     @EnableSwagger2
+     public class SwaggerConfig {
+     }
+ ```
 ​    2> 主启动类上  
 
 ```java
